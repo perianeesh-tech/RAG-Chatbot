@@ -50,7 +50,8 @@ and does not make up any new information to answer the question.
 
 Do not give ambiguous answers. If you don't know the answer,
 say "I don't know". But if the answer is in the context,
-answer the question as accurately as possible.
+answer the question as accurately as possible. Do not answer questions that 
+are not related to the context.
 
 Context:
 {{context_str}}
