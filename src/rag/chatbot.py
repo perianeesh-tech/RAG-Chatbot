@@ -18,7 +18,7 @@ def load_data():
                         input_dir = directory
                     ).load_data()
                     return documents
-                except Exception:
+                except ValueError:
                     print("Directory not found. Please try again.")
 
         elif choice == "f":
@@ -29,7 +29,7 @@ def load_data():
                         input_files = [file_path]
                     ).load_data()
                     return documents
-                except Exception:
+                except ValueError:
                     print("File not found. Please try again.")
 
         else:
