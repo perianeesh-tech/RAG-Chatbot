@@ -1943,7 +1943,7 @@ wheels = [
 ]
 
 [[package]]
-name = "rag"
+name = "rags"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
