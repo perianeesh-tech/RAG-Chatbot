@@ -1,5 +1,5 @@
 [project]
-name = "rag"
+name = "RAG Chatbot"
 version = "0.1.0"
 description = "A local RAG chatbot built with LlamaIndex and Ollama"
 readme = "README.md"
