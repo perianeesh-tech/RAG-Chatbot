@@ -3,6 +3,7 @@ from llama_index.core.prompts import RichPromptTemplate
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
 
+
 def load_data():
     while True:
         choice = input(
