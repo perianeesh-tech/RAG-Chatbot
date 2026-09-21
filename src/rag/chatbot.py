@@ -1,6 +1,4 @@
-from llama_index.core import Settings
-from llama_index.core import SimpleDirectoryReader
-from llama_index.core import VectorStoreIndex
+from llama_index.core import Settings, SimpleDirectoryReader, VectorStoreIndex
 from llama_index.core.prompts import RichPromptTemplate
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
@@ -20,7 +18,7 @@ def load_data():
                         input_dir = directory
                     ).load_data()
                     return documents
-                except Exception:
+                except ValueError:
                     print("Directory not found. Please try again.")
 
         elif choice == "f":
@@ -31,7 +29,7 @@ def load_data():
                         input_files = [file_path]
                     ).load_data()
                     return documents
-                except Exception:
+                except ValueError:
                     print("File not found. Please try again.")
 
         else:

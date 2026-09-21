@@ -1,1 +1,1 @@
-from rag.chatbot import main
+from rag.chatbot import main as main
