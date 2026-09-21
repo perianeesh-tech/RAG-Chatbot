@@ -1,4 +1,5 @@
 .venv/
-src/__pycache__/
-src/rag/__init__.cpython-312.pyc
-src/rag/__pycache__/
+__pycache__
+*.pyc
+.env
+.vscode/
