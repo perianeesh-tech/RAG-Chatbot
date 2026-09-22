@@ -1,8 +1,8 @@
 from llama_index.core import Settings, SimpleDirectoryReader, VectorStoreIndex
-from llama_index.readers.web import SimpleWebPageReader
 from llama_index.core.prompts import RichPromptTemplate
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
+from llama_index.readers.web import SimpleWebPageReader
 
 
 def load_data():
