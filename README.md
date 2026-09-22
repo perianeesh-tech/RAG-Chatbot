@@ -44,7 +44,7 @@ ollama pull qwen2.5:1.5b-instruct
 Run the chatbot with:
 
 ```bash
-uv run python chatbot.py
+uv run chatbot
 ```
 
 The program will ask whether you want to load data from a directory or a single file. After the data is indexed, you can ask questions about the loaded information.
