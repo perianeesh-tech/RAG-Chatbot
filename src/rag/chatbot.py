@@ -1,8 +1,8 @@
 from llama_index.core import Settings, SimpleDirectoryReader, VectorStoreIndex
-from llama_index.readers.web import SimpleWebPageReader
 from llama_index.core.prompts import RichPromptTemplate
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
+from llama_index.readers.web import SimpleWebPageReader
 
 
 def load_data():
@@ -114,7 +114,7 @@ def main():
 
     language_model = Ollama(
         model="qwen2.5:1.5b-instruct",
-        request_timeout=300.0,
+        request_timeout=600.0,
     )
 
     Settings.llm = language_model
