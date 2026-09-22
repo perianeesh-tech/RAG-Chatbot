@@ -1,4 +1,5 @@
 from llama_index.core import Settings, SimpleDirectoryReader, VectorStoreIndex
+from llama_index.readers.web import SimpleWebPageReader
 from llama_index.core.prompts import RichPromptTemplate
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
@@ -7,7 +8,7 @@ from llama_index.llms.ollama import Ollama
 def load_data():
     while True:
         choice = input(
-            "Do you want to load data from a directory or a file? (d/f): "
+            "Do you want to load data from a directory/file/url? (d/f/u): "
         )
 
         if choice == "d":
@@ -32,8 +33,19 @@ def load_data():
                 except ValueError:
                     print("File not found. Please try again.")
 
+        elif choice == "u":
+            while True:
+                try:
+                    url = input("Enter the URL: ").strip()
+                    documents = SimpleWebPageReader(
+                        html_to_text=True
+                    ).load_data(urls=[url])
+                    return documents
+                except ValueError:
+                    print("Invalid URL. Please try again.")
+
         else:
-            print("Invalid input. Please enter 'd' or 'f'.")
+            print("Invalid input. Please enter 'd' or 'f' or 'u'.")
 
 
 def create_query_engine(documents):
