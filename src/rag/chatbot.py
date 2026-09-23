@@ -42,7 +42,7 @@ def load_data():
                     ).load_data(urls=[url])
                     return documents
                 except ValueError:
-                    print("Invalid URL. Please try again.")
+                    print("Webpage not found. Please try again.")
 
         else:
             print("Invalid input. Please enter 'd' or 'f' or 'u'.")
