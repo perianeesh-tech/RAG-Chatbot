@@ -114,7 +114,7 @@ def main():
 
     language_model = Ollama(
         model="qwen2.5:1.5b-instruct",
-        request_timeout=300.0,
+        request_timeout=400.0,
     )
 
     Settings.llm = language_model
