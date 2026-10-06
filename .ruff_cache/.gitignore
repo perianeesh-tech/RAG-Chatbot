@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.vscode/
+.ruff_cache/0.16.8
