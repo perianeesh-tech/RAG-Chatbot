@@ -9,7 +9,7 @@ def test_load_data(monkeypatch):
             args.update(kwargs)
 
         def load_data(self):
-            return ["Directory"]
+            return expected
 
     answers = iter(["d", "test_directory"])
     monkeypatch.setattr('builtins.input', lambda _: next(answers))
