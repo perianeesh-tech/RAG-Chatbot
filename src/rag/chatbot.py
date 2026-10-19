@@ -7,17 +7,13 @@ from llama_index.readers.web import SimpleWebPageReader
 
 def load_data():
     while True:
-        choice = input(
-            "Do you want to load data from a directory/file/url? (d/f/u): "
-        )
+        choice = input("Do you want to load data from a directory/file/url? (d/f/u): ")
 
         if choice == "d":
             while True:
                 try:
                     directory = input("Enter the directory path: ").strip('"')
-                    documents = SimpleDirectoryReader(
-                        input_dir = directory
-                    ).load_data()
+                    documents = SimpleDirectoryReader(input_dir=directory).load_data()
                     return documents
                 except ValueError:
                     print("Directory not found. Please try again.")
@@ -27,7 +23,7 @@ def load_data():
                 try:
                     file_path = input("Enter the file path: ").strip('"')
                     documents = SimpleDirectoryReader(
-                        input_files = [file_path]
+                        input_files=[file_path]
                     ).load_data()
                     return documents
                 except ValueError:
@@ -37,9 +33,9 @@ def load_data():
             while True:
                 try:
                     url = input("Enter the URL: ").strip()
-                    documents = SimpleWebPageReader(
-                        html_to_text=True
-                    ).load_data(urls=[url])
+                    documents = SimpleWebPageReader(html_to_text=True).load_data(
+                        urls=[url]
+                    )
                     return documents
                 except ValueError:
                     print("Webpage not found. Please try again.")
@@ -77,9 +73,7 @@ Answer:
 
     query_engine = index.as_query_engine()
 
-    query_engine.update_prompts(
-        {"response_synthesizer:text_qa_template": template}
-    )
+    query_engine.update_prompts({"response_synthesizer:text_qa_template": template})
 
     return query_engine
 
@@ -89,9 +83,7 @@ def chat(query_engine):
         choice = input("Do you want to ask a question? (y/n): ")
 
         if choice == "y":
-            question = input(
-                "Ask me anything about the loaded data: "
-            )
+            question = input("Ask me anything about the loaded data: ")
             answer = query_engine.query(question)
             print(answer.response)
 
@@ -106,9 +98,7 @@ def chat(query_engine):
 def main():
     print("Loading modules...")
 
-    embedding_model = HuggingFaceEmbedding(
-        model_name="BAAI/bge-small-en-v1.5"
-    )
+    embedding_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 
     Settings.embed_model = embedding_model
 
