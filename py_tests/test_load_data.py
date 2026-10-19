@@ -1,6 +1,5 @@
 from rag.chatbot import load_data
 
-
 def test_load_data(monkeypatch):
     expected = ["Directory"]
     args = {}
