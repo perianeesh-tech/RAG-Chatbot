@@ -42,7 +42,7 @@ def load_data():
                     ).load_data(urls=[url])
                     return documents
                 except ValueError:
-                    print("Invalid URL. Please try again.")
+                    print("Webpage not found. Please try again.")
 
         else:
             print("Invalid input. Please enter 'd' or 'f' or 'u'.")
@@ -114,7 +114,7 @@ def main():
 
     language_model = Ollama(
         model="qwen2.5:1.5b-instruct",
-        request_timeout=600.0,
+        request_timeout=400.0,
     )
 
     Settings.llm = language_model
