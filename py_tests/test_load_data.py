@@ -16,4 +16,3 @@ def test_load_data(monkeypatch):
     monkeypatch.setattr('rag.chatbot.SimpleDirectoryReader', FakeReader)
     assert load_data() == expected
     assert args['input_dir'] == "test_directory"
-    
